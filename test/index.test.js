@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import HsvColorPicker from '../src';
+import HsvColorPicker from '../index';
 
 describe('<HsvColorPicker />', () => {
   test('renders correctly', () => {

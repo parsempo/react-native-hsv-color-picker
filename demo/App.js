@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import HsvColorPicker from '../src';
+import HsvColorPicker from '../index';
 
 export default class App extends React.Component {
   constructor(props) {

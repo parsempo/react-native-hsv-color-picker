@@ -1,3 +1,3 @@
-import HsvColorPicker from './HsvColorPicker';
+import ColorPicker from './ColorPicker';
 
-export default HsvColorPicker;
+export default ColorPicker;
