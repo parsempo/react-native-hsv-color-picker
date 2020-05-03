@@ -28,8 +28,9 @@ export default class ColorPicker extends React.PureComponent {
 
   render() {
     const { hue, sat, val } = this.state;
+    const { style } = this.props;
     return (
-      <View>
+      <View style={style}>
         <HsvColorPicker
           ref={this.picker}
           huePickerHue={hue}
