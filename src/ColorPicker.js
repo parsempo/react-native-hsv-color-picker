@@ -11,7 +11,7 @@ export default class ColorPicker extends React.PureComponent {
     if (initialColor) {
       const hsvValue = chroma(initialColor).hsv();
       this.state = {
-        hue: hsvValue[0],
+        hue: hsvValue[0] || 0,
         sat: hsvValue[1],
         val: hsvValue[2],
       }
@@ -29,7 +29,7 @@ export default class ColorPicker extends React.PureComponent {
   render() {
     const { hue, sat, val } = this.state;
     return (
-      <View style={styles.container}>
+      <View>
         <HsvColorPicker
           ref={this.picker}
           huePickerHue={hue}
@@ -53,12 +53,12 @@ export default class ColorPicker extends React.PureComponent {
     this.setState({
       sat: saturation,
       val: value,
-    });
+    }, () => this.props.onColorSelect(this.getCurrentColor()));
   }
 
   onHuePickerChange = ({ hue }) => {
     this.setState({
       hue,
-    });
+    }, () => this.props.onColorSelect(this.getCurrentColor()));
   }
 }
